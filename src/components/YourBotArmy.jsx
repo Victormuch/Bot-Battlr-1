@@ -1,3 +1,4 @@
+
 function YourBotArmy({ enlistedBots, onRelease }) {
   function handleRelease(bot) {
     onRelease(bot);
@@ -18,6 +19,7 @@ function YourBotArmy({ enlistedBots, onRelease }) {
             >
               Release
             </button>
+         
           </div>
         ))}
       </div>

@@ -42,6 +42,7 @@ function BotCollection() {
             <img src={bot.avatar_url} alt={bot.name} />
             <h3>{bot.name}</h3>
             <p>{bot.catchphrase}</p>
+            <button>Enlist</button>
            
           </div>
         ))}
