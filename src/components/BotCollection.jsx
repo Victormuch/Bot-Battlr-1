@@ -39,12 +39,10 @@ function BotCollection() {
       <div className="card-container">
         {bots.map((bot) => (
           <div key={bot.id} className="card" onClick={() => enlistBot(bot)}>
-            <h3>{bot.name}</h3>
             <img src={bot.avatar_url} alt={bot.name} />
-            <p>Class: {bot.bot_class}</p>
-            <p>Health: {bot.health}</p>
-            <p>Damage: {bot.damage}</p>
-            <p>Armor: {bot.armor}</p>
+            <h3>{bot.name}</h3>
+            <p>{bot.catchphrase}</p>
+           
           </div>
         ))}
       </div>
