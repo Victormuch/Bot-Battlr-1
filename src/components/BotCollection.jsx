@@ -30,25 +30,38 @@ function BotCollection() {
   }
 
   return (
-    <div className="bot-container">
-      <YourBotArmy
-        enlistedBots={enlistedBots}
-        onRelease={handleRelease}
-        onDischarge={handleDischarge}
-      />
-      <div className="card-container">
-        {bots.map((bot) => (
-          <div key={bot.id} className="card" onClick={() => enlistBot(bot)}>
-            <img src={bot.avatar_url} alt={bot.name} />
-            <h3>{bot.name}</h3>
-            <p>{bot.catchphrase}</p>
-            <button>Enlist</button>
-           
-          </div>
-        ))}
-      </div>
+ <div className="bot-container">
+    <YourBotArmy
+      enlistedBots={enlistedBots}
+      onRelease={handleRelease}
+      onDischarge={handleDischarge}
+    />
+    <div className="card-container">
+      {bots.map((bot) => (
+        <div key={bot.id} className="card" onClick={() => enlistBot(bot)}>
+          <img src={bot.avatar_url} alt={bot.name} />
+          <h3>{bot.name}</h3>
+          <p className="catchphrase">{bot.catchphrase}</p>
+          
+          <span>
+            <i className="icon heartbeat" />
+            {bot.health}
+          </span>
+          <span>
+            <i className="icon lightning" />
+            {bot.damage}
+          </span>
+          <span>
+            <i className="icon shield" />
+            {bot.armor}
+          </span>
+          
+          <button>Enlist</button>
+        </div>
+      ))}
     </div>
-  );
+  </div>
+);
 }
 
 export default BotCollection;

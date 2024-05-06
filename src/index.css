@@ -18,32 +18,32 @@ h1{
   border-radius: 8px;
   padding: 20px;
   margin: 10px;
-  width: 400px; 
+  width: 400px;
+  cursor: pointer;
 }
 
 .card img {
-  width: 150px;
-  height: 150px; 
+ width: 150px;
+  height: 150px;
+  border-radius: 8px;
 }
 
 
 .card h3 {
-  margin-top: 0;
+ font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+.catchphrase small{
+   font-style: italic;
 }
 
-
 .card-button {
-  background-color: #526875;
+   background-color: #ff6666;
   border: none;
   color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  padding: 5px 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .enlisted-bot-container {
