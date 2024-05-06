@@ -5,7 +5,7 @@ function BotCollection() {
   const [enlistedBots, setEnlistedBots] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/bots")
+    fetch("https://my-json-server.typicode.com/Victormuch/Bot-Battlr-1/bots")
       .then((response) => response.json())
       .then((data) => setBots(data));
   }, []);
@@ -24,9 +24,12 @@ function BotCollection() {
   }
 
   function handleDischarge(bot) {
-    fetch(`http://localhost:3000/bots/${bot.id}`, {
-      method: "DELETE",
-    });
+    fetch(
+      `https://my-json-server.typicode.com/Victormuch/Bot-Battlr-1/bots${bot.id}`,
+      {
+        method: "DELETE",
+      }
+    );
   }
 
   return (
