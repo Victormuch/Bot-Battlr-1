@@ -92,3 +92,46 @@ h1{
   cursor: pointer;
   border-radius: 5px;
 }
+.button{
+    background-color: #526875;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.sort-bar {
+  display: flex;
+  align-items: center;
+}
+
+.sort-select,
+.filter-select {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.filter-select {
+  width: 200px; 
+}
+
+
+.filter-select[multiple] {
+  height: auto !important;
+}
+
+
+.filter-select option {
+  font-size: 14px;
+}
