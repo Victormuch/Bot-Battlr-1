@@ -8,7 +8,7 @@ function BotCollection() {
   const [selectedFilters, setSelectedFilters] = useState([null]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/bots")
+    fetch("https://my-json-server.typicode.com/Victormuch/Bot-Battlr-1/bots")
       .then((response) => response.json())
       .then((data) => setBots(data));
   }, []);
