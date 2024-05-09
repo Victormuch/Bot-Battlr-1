@@ -5,7 +5,7 @@
 https://drive.google.com/file/d/1Ut9dRtF8iqhpDLoOh4f4tO8JT_bmLicp/view?usp=sharing
 
 
-<video controls src="code-challenge-2.mp4" title="Title"></video>
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
