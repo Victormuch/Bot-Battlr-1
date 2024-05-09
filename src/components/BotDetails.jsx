@@ -1,4 +1,8 @@
 function BotDetails({bot}) {
+
+  function handleEnlist(){
+    OnEnlist(bot)
+  }
   return (
     <div>
       <h2>{bot.name}</h2>
@@ -6,6 +10,7 @@ function BotDetails({bot}) {
       <p> Health:{bot.health}</p>
       <p> Damage:{bot.damage}</p>
       <p> Armor:{bot.armor}</p>
+<button onClick={handleEnlist}>Enlist</button>
     </div>
   );
 }

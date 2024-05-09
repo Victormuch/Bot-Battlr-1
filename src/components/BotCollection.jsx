@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import YourBotArmy from "./YourBotArmy";
 import SortBar from "./SortBar";
-
+import { Link } from "react-router-dom";
 function BotCollection() {
   const [bots, setBots] = useState([]);
   const [enlistedBots, setEnlistedBots] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState([null]);
 
   useEffect(() => {
-    fetch("https://my-json-server.typicode.com/Victormuch/Bot-Battlr-1/bots")
+    fetch("http://localhost:3000/bots")
       .then((response) => response.json())
       .then((data) => setBots(data));
   }, []);
@@ -73,12 +73,11 @@ function BotCollection() {
       />
       <div className="card-container">
         {bots.map((bot) => (
-          <div key={bot.id} className="card" onClick={() => enlistBot(bot)}>
+          <Link key={bot.id} to={`/bots/${bot.id}`} className="card" >
             <img src={bot.avatar_url} alt={bot.name} />
             <h3>{bot.name}</h3>
             <p className="catchphrase">{bot.catchphrase}</p>
-            
-          </div>
+          </Link>
         ))}
       </div>
     </div>
