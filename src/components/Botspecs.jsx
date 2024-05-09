@@ -1,26 +1,36 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
 
-function BotSpecs({ bot, onEnlist }) {
-  const history = useHistory();
+function BotSpecs() {
+  const [bots2, setBots2] = useState([]);
+  const [botArmy, setBotArmy] = useState([]);
 
-  const handleEnlist = () => {
-    onEnlist(bot);
-    history.push("/");
+  const addToArmy = (bot) => {
+    if (!botArmy.some((armyBot) => armyBot.id === bot.id)) {
+      setBotArmy([...botArmy, bot]);
+    }
+  };
+
+  const removeFromArmy = (botId) => {
+    const updatedBotArmy = botArmy.filter((bot) => bot.id !== botId);
+    setBotArmy(updatedBotArmy);
   };
 
   return (
-    <div>
-      <h2>{bot.name}</h2>
-      <img src={bot.avatar_url} alt={bot.name} />
-      <p>Class: {bot.bot_class}</p>
-      <p>Health: {bot.health}</p>
-      <p>Damage: {bot.damage}</p>
-      <p>Armor: {bot.armor}</p>
-      <p>Catchphrase: {bot.catchphrase}</p>
-      <button onClick={handleEnlist}>Enlist</button>
-      <button onClick={() => history.goBack()}>Go Back</button>
-    </div>
+ 
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <BotSpecs
+              bots2={bots2}
+              botArmy={botArmy}
+              addToArmy={addToArmy}
+              removeFromArmy={removeFromArmy}
+            />
+          }
+        />
+      </Routes>
+  
   );
 }
 

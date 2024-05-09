@@ -1,4 +1,4 @@
-const SortBar = ({ onSort1, onFilterData }) => {
+const SortBar = ({ onSort1, }) => {
   return (
     <div className="sort-bar">
       <select onChange={onSort1}>

@@ -5,7 +5,7 @@ import SortBar from "./SortBar";
 function BotCollection() {
   const [bots, setBots] = useState([]);
   const [enlistedBots, setEnlistedBots] = useState([]);
-  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [selectedFilters, setSelectedFilters] = useState([null]);
 
   useEffect(() => {
     fetch("https://my-json-server.typicode.com/Victormuch/Bot-Battlr-1/bots")
@@ -34,7 +34,7 @@ function BotCollection() {
       }
     );
   }
-
+  
   function handleSort1(e) {
     const selectedSort = e.target.value;
     let sortedBots = [...bots];
@@ -77,7 +77,7 @@ function BotCollection() {
             <img src={bot.avatar_url} alt={bot.name} />
             <h3>{bot.name}</h3>
             <p className="catchphrase">{bot.catchphrase}</p>
-            <button className="button">Enlist</button>
+            
           </div>
         ))}
       </div>
